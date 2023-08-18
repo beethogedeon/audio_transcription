@@ -1,8 +1,5 @@
 import whisper
-import os
 import torch
-import subprocess
-
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 

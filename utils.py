@@ -7,5 +7,5 @@ model = whisper.load_model("base", device=DEVICE)
 
 
 def transcribe(audio: str) -> str:
-    result = model.transcribe(audio)
+    result = model.transcribe(audio, fp16=False)
     return result["text"]

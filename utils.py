@@ -1,11 +1,8 @@
 import whisper
-import torch
 
-DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-
-model = whisper.load_model("base", device=DEVICE)
+model = whisper.load_model("large-v2")
 
 
 def transcribe(audio: str) -> str:
-    result = model.transcribe(audio, fp16=False)
+    result = model.transcribe(audio)
     return result["text"]

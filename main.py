@@ -22,15 +22,10 @@ if uploaded_file:
         # Call the transcribe_audio function to get the transcription
         transcription = transcribe(os.path.abspath("uploaded_audio.wav"))
 
-        # Save transcription to a temporary file
-        tmp_file_path = "temp_transcription.txt"
-        with open(tmp_file_path, "w") as tmp_file:
-            tmp_file.write(transcription)
-
         # Provide a link to download the PDF
         st.download_button(
             label="Download",
-            data=tmp_file_path,
+            data=transcription,
             file_name="transcription.txt"
         )
 

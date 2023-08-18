@@ -15,12 +15,12 @@ if uploaded_file:
     st.audio(uploaded_file, format="audio/mp3")
 
     # Save the uploaded audio file
-    with open("uploaded_audio.wav", "wb") as f:
+    with open("uploaded_audio.mp3", "wb") as f:
         f.write(uploaded_file.read())
 
     if st.button("Transcribe"):
         # Call the transcribe_audio function to get the transcription
-        transcription = transcribe(os.path.abspath("uploaded_audio.wav"))
+        transcription = transcribe(os.path.abspath("uploaded_audio.mp3"))
 
         # Provide a link to download the PDF
         st.download_button(
@@ -30,4 +30,5 @@ if uploaded_file:
         )
 
         # Clean up the temporary file
-        os.remove("uploaded_audio.wav")
+        if os.path.exists("uploaded_audio.mp3"):
+            os.remove("uploaded_audio.mp3")

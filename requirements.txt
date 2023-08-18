@@ -1,0 +1,4 @@
+tiktoken==0.3.1
+streamlit
+openai-whisper
+torch

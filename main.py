@@ -7,7 +7,7 @@ st.title("Audio Transcription App with Whisper")
 st.write("Upload an audio file and get a transcription in PDF format.")
 
 # File upload widget
-uploaded_file = st.file_uploader("Upload an audio file (max 10MB)", type=["mp3", "wav"],  max_upload_size=10*1024*1024)
+uploaded_file = st.file_uploader("Upload an audio file (max 10MB)", type=["mp3", "wav"])
 
 
 if uploaded_file:

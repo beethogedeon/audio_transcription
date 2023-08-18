@@ -1,6 +1,6 @@
 import whisper
 
-model = whisper.load_model("large-v2")
+model = whisper.load_model("medium")
 
 
 def transcribe(audio: str) -> str:

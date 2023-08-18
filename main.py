@@ -30,5 +30,4 @@ if uploaded_file:
         )
 
         # Clean up the temporary file
-        os.remove(tmp_file_path)
         os.remove("uploaded_audio.wav")

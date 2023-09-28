@@ -20,7 +20,12 @@ if uploaded_file:
 
     if st.button("Transcribe"):
         # Call the transcribe_audio function to get the transcription
-        transcription = transcribe(os.path.abspath("uploaded_audio.mp3"))
+        with st.spinner("Transcribing..."):
+            transcription = transcribe(os.path.abspath("uploaded_audio.mp3"))
+
+        if transcription:
+            st.success("Transcription complete!")
+            st.text_area("Transcription", transcription, disabled=True)
 
         # Provide a link to download the PDF
         st.download_button(

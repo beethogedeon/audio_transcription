@@ -2,11 +2,11 @@ import streamlit as st
 import os
 from utils import transcribe
 
-# Streamlit app title and description
+# Set title for our app
 st.title("Audio Transcription")
 
 
-# File upload widget
+# Show File upload widget
 uploaded_file = st.file_uploader("Upload an audio file (max 10MB)", type=["mp3", "wav"])
 
 
